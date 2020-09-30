@@ -10,16 +10,6 @@ export const AppContainer = styled.div`
   width: 100%;
 `;
 
-export const CardContainer = styled.div`
-  background-color: #fff;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  max-width: 300px;
-  border-radius: 3px;
-  box-shadow: #091e4240 0px 1px 0px 0px;
-`;
-
 interface AddItemButtonProps {
   dark?: boolean;
 }
@@ -75,6 +65,16 @@ interface DragPreviewContainerProps {
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
   transform: ${(props) => (props.isPreview ? "rotate(5deg)" : undefined)};
   opacity: ${(props) => (props.isHidden ? 0.2 : 1)};
+`;
+
+export const CardContainer = styled(DragPreviewContainer)`
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  max-width: 300px;
+  border-radius: 3px;
+  box-shadow: #091e4240 0px 1px 0px 0px;
 `;
 
 export const ColumnContainer = styled(DragPreviewContainer)`
